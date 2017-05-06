@@ -40,7 +40,7 @@
                                     <Setter Property="VerticalContentAlignment" Value="Stretch"/>
                                 </Style>
                             </ListView.ItemContainerStyle>
-                            <ListViewItem Padding="12,12,12,0" AutomationProperties.Name="Home Page" AutomationProperties.HelpText="Navigate to home page">
+                            <ListViewItem Padding="12,12,12,0" AutomationProperties.Name="Home" AutomationProperties.HelpText="Navigate to home page">
                                 <Grid Tag="Home">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
@@ -52,50 +52,40 @@
                             </ListViewItem>
 
                             <ListViewItem Padding="12,12,12,0" AutomationProperties.Name="Artists page" AutomationProperties.HelpText="Navigate to artists page">
-                                <Grid Tag="Artists">
+                                <Grid Tag="Performance">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="6*"/>
                                     </Grid.ColumnDefinitions>
-                                    <TextBlock Text="&#xE13D;" FontSize="18" FontFamily="Segoe MDL2 Assets" Grid.Column="0" AutomationProperties.AccessibilityView="Raw"/>
-                                    <TextBlock x:Uid="PageMasterSplitArtistsPage" Text="Artists" Grid.Column="1" AutomationProperties.AccessibilityView="Raw"/>
+                                    <TextBlock Text="" FontSize="18" FontFamily="Segoe MDL2 Assets" Grid.Column="0" AutomationProperties.AccessibilityView="Raw"/>
+                                    <TextBlock x:Uid="PageMasterSplitArtistsPage" Text="Performance" Grid.Column="1" AutomationProperties.AccessibilityView="Raw"/>
                                 </Grid>
                             </ListViewItem>
 
                             <ListViewItem Padding="12,12,12,0" AutomationProperties.Name="Songs page" AutomationProperties.HelpText="Navigate to songs page">
-                                <Grid Tag="Songs">
+                                <Grid Tag="Test">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="6*"/>
                                     </Grid.ColumnDefinitions>
-                                    <TextBlock Text="&#xEC4F;" FontSize="18" FontFamily="Segoe MDL2 Assets" Grid.Column="0" AutomationProperties.AccessibilityView="Raw"/>
-                                    <TextBlock x:Uid="PageMasterSplitSongsPage" Text="Songs" Grid.Column="1" AutomationProperties.AccessibilityView="Raw"/>
+                                    <TextBlock Text="" FontSize="18" FontFamily="Segoe MDL2 Assets" Grid.Column="0" AutomationProperties.AccessibilityView="Raw"/>
+                                    <TextBlock x:Uid="PageMasterSplitSongsPage" Text="Test" Grid.Column="1" AutomationProperties.AccessibilityView="Raw"/>
                                 </Grid>
                             </ListViewItem>
 
                             <ListViewItem Padding="12,12,12,0" AutomationProperties.Name="Albums page" AutomationProperties.HelpText="Navigate to albums page">
-                                <Grid Tag="Albums">
+                                <Grid Tag="Data">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="6*"/>
                                     </Grid.ColumnDefinitions>
-                                    <TextBlock Text="&#xE93C;" FontSize="18" FontFamily="Segoe MDL2 Assets" Grid.Column="0" AutomationProperties.AccessibilityView="Raw"/>
-                                    <TextBlock x:Uid="PageMasterSplitAlbumsPage" Text="Albums" Grid.Column="1" AutomationProperties.AccessibilityView="Raw"/>
+                                    <TextBlock Text="" FontSize="18" FontFamily="Segoe MDL2 Assets" Grid.Column="0" AutomationProperties.AccessibilityView="Raw"/>
+                                    <TextBlock x:Uid="PageMasterSplitAlbumsPage" Text="Quiz box" Grid.Column="1" AutomationProperties.AccessibilityView="Raw"/>
                                 </Grid>
                             </ListViewItem>
 
                            
 
-                            <ListViewItem Padding="12,12,12,0" AutomationProperties.Name="downloads page" AutomationProperties.HelpText="Navigate to downloads page">
-                                <Grid Tag="Downloads">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="6*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Text="&#xE896;" FontSize="18" FontFamily="Segoe MDL2 Assets" Grid.Column="0" AutomationProperties.AccessibilityView="Raw"/>
-                                    <TextBlock x:Uid="PageMasterSplitDownloadsPage" Text="Downloads" Grid.Column="1" AutomationProperties.AccessibilityView="Raw"/>
-                                </Grid>
-                            </ListViewItem>
 
                         </ListView>
 
