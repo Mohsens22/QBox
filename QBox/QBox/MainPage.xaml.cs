@@ -26,5 +26,20 @@ namespace QBox
         {
             this.InitializeComponent();
         }
+
+        private void MainPageList_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void ListView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void SplitButton_Click(object sender, RoutedEventArgs e)
+        {
+            Split.IsPaneOpen = !Split.IsPaneOpen;
+        }
     }
 }

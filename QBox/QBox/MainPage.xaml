@@ -8,6 +8,180 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid x:Name="TopApplicationBar" Grid.Row="0" Height="55" Background="{ThemeResource AppBackgroundColor}" BorderThickness="0,0,0,1.6" BorderBrush="#66D3D3D3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button BorderThickness="0,0,0,0" Opacity="0.75" x:Name="SplitButton" Width="45" FontFamily="Segoe MDL2 Assets" VerticalAlignment="Stretch" FontSize="18" Content="&#xE700;" Background="Transparent" Click="SplitButton_Click" AutomationProperties.HelpText="Open and Close hamburger menu" AutomationProperties.Name="Hamburger menu" Height="45" />
+                <TextBlock Opacity="0.75" Visibility="Visible" x:Name="PageTitle" x:FieldModifier="public" FontWeight="SemiBold" Grid.Column="1" Text="Salam" VerticalAlignment="Center" FontSize="16"/>
+                
+            </Grid>
+            <SplitView x:Name="Split" Style="{StaticResource MahGraphicSplit}" OpenPaneLength="285" Grid.RowSpan="1" Grid.Row="1" PaneBackground="{ThemeResource AppBackgroundColor}" >
+                <SplitView.Pane>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <ListView x:Name="MainPageList" Grid.Row="0" IsItemClickEnabled="True" SelectionMode="None" ItemClick="MainPageList_ItemClick">
+                            <ListView.ItemContainerStyle>
+                                <Style TargetType="ListViewItem">
+                                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                                    <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+                                </Style>
+                            </ListView.ItemContainerStyle>
+                            <ListViewItem Padding="12,12,12,0" AutomationProperties.Name="Home Page" AutomationProperties.HelpText="Navigate to home page">
+                                <Grid Tag="Home">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="6*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="&#xE10F;" FontSize="18" FontFamily="Segoe MDL2 Assets" Grid.Column="0" AutomationProperties.AccessibilityView="Raw"/>
+                                    <TextBlock x:Uid="PageMasterSplitHomePage" Text="Home Page" Grid.Column="1" AutomationProperties.AccessibilityView="Raw"/>
+                                </Grid>
+                            </ListViewItem>
+
+                            <ListViewItem Padding="12,12,12,0" AutomationProperties.Name="Artists page" AutomationProperties.HelpText="Navigate to artists page">
+                                <Grid Tag="Artists">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="6*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="&#xE13D;" FontSize="18" FontFamily="Segoe MDL2 Assets" Grid.Column="0" AutomationProperties.AccessibilityView="Raw"/>
+                                    <TextBlock x:Uid="PageMasterSplitArtistsPage" Text="Artists" Grid.Column="1" AutomationProperties.AccessibilityView="Raw"/>
+                                </Grid>
+                            </ListViewItem>
+
+                            <ListViewItem Padding="12,12,12,0" AutomationProperties.Name="Songs page" AutomationProperties.HelpText="Navigate to songs page">
+                                <Grid Tag="Songs">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="6*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="&#xEC4F;" FontSize="18" FontFamily="Segoe MDL2 Assets" Grid.Column="0" AutomationProperties.AccessibilityView="Raw"/>
+                                    <TextBlock x:Uid="PageMasterSplitSongsPage" Text="Songs" Grid.Column="1" AutomationProperties.AccessibilityView="Raw"/>
+                                </Grid>
+                            </ListViewItem>
+
+                            <ListViewItem Padding="12,12,12,0" AutomationProperties.Name="Albums page" AutomationProperties.HelpText="Navigate to albums page">
+                                <Grid Tag="Albums">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="6*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="&#xE93C;" FontSize="18" FontFamily="Segoe MDL2 Assets" Grid.Column="0" AutomationProperties.AccessibilityView="Raw"/>
+                                    <TextBlock x:Uid="PageMasterSplitAlbumsPage" Text="Albums" Grid.Column="1" AutomationProperties.AccessibilityView="Raw"/>
+                                </Grid>
+                            </ListViewItem>
+
+                           
+
+                            <ListViewItem Padding="12,12,12,0" AutomationProperties.Name="downloads page" AutomationProperties.HelpText="Navigate to downloads page">
+                                <Grid Tag="Downloads">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="6*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="&#xE896;" FontSize="18" FontFamily="Segoe MDL2 Assets" Grid.Column="0" AutomationProperties.AccessibilityView="Raw"/>
+                                    <TextBlock x:Uid="PageMasterSplitDownloadsPage" Text="Downloads" Grid.Column="1" AutomationProperties.AccessibilityView="Raw"/>
+                                </Grid>
+                            </ListViewItem>
+
+                        </ListView>
+
+
+                        <ListView ScrollViewer.IsVerticalRailEnabled="False" ScrollViewer.IsHorizontalRailEnabled="False" Grid.Row="1" IsItemClickEnabled="True" SelectionMode="None" ItemClick="ListView_ItemClick">
+                            <ListView.ItemContainerStyle>
+                                <Style TargetType="ListViewItem">
+                                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                                    <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+                                </Style>
+                            </ListView.ItemContainerStyle>
+
+                            <ListViewItem Padding="12,12,12,0" AutomationProperties.Name="about page" AutomationProperties.HelpText="Navigate to about page">
+                                <Grid Tag="About">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="6*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="&#xE946;" FontSize="18" FontFamily="Segoe MDL2 Assets" Grid.Column="0" AutomationProperties.AccessibilityView="Raw"/>
+                                    <TextBlock x:Uid="PageMasterSplitAboutPage" Text="About" Grid.Column="1" AutomationProperties.AccessibilityView="Raw"/>
+                                </Grid>
+                            </ListViewItem>
+
+                            <ListViewItem Padding="12,12,12,0" AutomationProperties.Name="settings page" AutomationProperties.HelpText="Navigate to settings page">
+                                <Grid Tag="Settings">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="6*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="&#xE713;" FontSize="18" FontFamily="Segoe MDL2 Assets" Grid.Column="0" AutomationProperties.AccessibilityView="Raw"/>
+                                    <TextBlock x:Uid="PageMasterSplitSettingsPage" Text="Settings" Grid.Column="1" AutomationProperties.AccessibilityView="Raw"/>
+                                </Grid>
+                            </ListViewItem>
+
+                        </ListView>
+                    </Grid>
+                </SplitView.Pane>
+                <Grid>
+                    <Frame x:Name="Frame" Grid.Row="1"/>
+                </Grid>
+            </SplitView>
+        </Grid>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="WindowStates">
+                <VisualState x:Name="UltraWideState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="900" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Split.IsPaneOpen" Value="True" />
+                        <Setter Target="Split.DisplayMode" Value="Inline" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="WideState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Split.IsPaneOpen" Value="False" />
+                        <Setter Target="Split.DisplayMode" Value="CompactOverlay" />
+
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Split.IsPaneOpen" Value="False" />
+                        <Setter Target="Split.DisplayMode" Value="Overlay" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+
+            <VisualStateGroup x:Name="PlayerPageStates">
+                <VisualState x:Name="PlayerPageState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Split.IsPaneOpen" Value="False" />
+                        <Setter Target="Split.DisplayMode" Value="Overlay" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
 
     </Grid>
 </Page>
