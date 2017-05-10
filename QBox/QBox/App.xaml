@@ -10,6 +10,8 @@
 
             <ResourceDictionary.ThemeDictionaries>
                 <ResourceDictionary x:Key="Dark">
+                    <SolidColorBrush x:Key="AppSuspressBrush" Color="#2b2b2b" />
+
                     <SolidColorBrush x:Key="AccentBackupBrush" Color="{ThemeResource SystemAccentColor}"/>
                     <SolidColorBrush x:Key="WikisedaAccentBrush" Color="{ThemeResource SystemAccentColor}"/>
                     <SolidColorBrush x:Key="PureDarkLight" Color="#000000"/>
@@ -26,6 +28,8 @@
                     <SolidColorBrush x:Key="AppForegroundHghBrush" Color="{ThemeResource AppForegroundHighColor}" />
                 </ResourceDictionary>
                 <ResourceDictionary x:Key="Light">
+                    <SolidColorBrush x:Key="AppSuspressBrush" Color="{ThemeResource SystemAccentColor}" />
+
                     <SolidColorBrush x:Key="AccentBackupBrush" Color="{ThemeResource SystemAccentColor}"/>
                     <SolidColorBrush x:Key="WikisedaAccentBrush" Color="{ThemeResource SystemAccentColor}"/>
                     <SolidColorBrush x:Key="PureDarkLight" Color="#ffffff"/>
@@ -42,6 +46,8 @@
                     <SolidColorBrush x:Key="AppForegroundHghBrush" Color="{ThemeResource AppForegroundHighColor}" />
                 </ResourceDictionary>
                 <ResourceDictionary x:Key="HighContrastBlack">
+                    <SolidColorBrush x:Key="AppSuspressBrush" Color="#2b2b2b" />
+
                     <SolidColorBrush x:Key="AccentBackupBrush" Color="{ThemeResource SystemAccentColor}"/>
                     <SolidColorBrush x:Key="WikisedaAccentBrush" Color="{ThemeResource SystemAccentColor}"/>
                     <SolidColorBrush x:Key="PureDarkLight" Color="#000000"/>
