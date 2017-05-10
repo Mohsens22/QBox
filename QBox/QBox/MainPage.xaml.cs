@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QBox.Views;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,16 +26,64 @@ namespace QBox
         public MainPage()
         {
             this.InitializeComponent();
+            
+            
+            
         }
-
-        private void MainPageList_ItemClick(object sender, ItemClickEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            if (Frame.CanGoBack)
+            {
+                try
+                {
+                    Frame.BackStack.Clear();
+
+                }
+                catch { }
+            }
+            Framer.Navigate(typeof(Main));
 
         }
+
 
         private void ListView_ItemClick(object sender, ItemClickEventArgs e)
         {
+            var tag = (e.ClickedItem as Grid).Tag.ToString();
+            switch (tag)
+            {
+                case "Home":
+                    Framer.Navigate(typeof(Main));
+                    Split.IsPaneOpen = false;
 
+                    break;
+                case "Performance":
+                    Framer.Navigate(typeof(Performance));
+                    Split.IsPaneOpen = false;
+
+                    break;
+                case "Test":
+                    Framer.Navigate(typeof(Test));
+                    Split.IsPaneOpen = false;
+
+                    break;
+                case "Data":
+                    Framer.Navigate(typeof(DB));
+                    Split.IsPaneOpen = false;
+
+                    break;
+                case "About":
+                    Framer.Navigate(typeof(About));
+                    Split.IsPaneOpen = false;
+
+                    break;
+                case "Settings":
+                    Framer.Navigate(typeof(Settings));
+                    Split.IsPaneOpen = false;
+
+                    break;
+
+
+            }
         }
 
         private void SplitButton_Click(object sender, RoutedEventArgs e)

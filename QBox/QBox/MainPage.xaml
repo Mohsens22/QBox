@@ -33,7 +33,7 @@
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
 
-                        <ListView x:Name="MainPageList" Grid.Row="0" IsItemClickEnabled="True" SelectionMode="None" ItemClick="MainPageList_ItemClick">
+                        <ListView x:Name="MainPageList" Grid.Row="0" IsItemClickEnabled="True" SelectionMode="None" ItemClick="ListView_ItemClick">
                             <ListView.ItemContainerStyle>
                                 <Style TargetType="ListViewItem">
                                     <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
@@ -124,7 +124,7 @@
                     </Grid>
                 </SplitView.Pane>
                 <Grid>
-                    <Frame x:Name="Frame" Grid.Row="1"/>
+                    <Frame x:Name="Framer" Grid.Row="1"/>
                 </Grid>
             </SplitView>
         </Grid>
