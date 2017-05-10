@@ -24,11 +24,11 @@
                             <FlipView x:Name="flipwel" SelectionChanged="flipwel_SelectionChanged" Background="Transparent" Height="330" VerticalAlignment="Top" >
                                 <FlipViewItem>
                                     <StackPanel Margin="0,0,0,0">
-                                        <Image Source="/Assets/Icons/Denna logo white.png" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" Height="100"  Width="100" />
+                                        <Image Source="/Assets/Icons/Sahih.png" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" Height="95"  Width="95" />
                                         <TextBlock x:Uid="welcome" FontWeight="Bold"  Margin="0,10,0,0" Foreground="White" TextAlignment="Center" FontSize="23" Text="WELCOME" />
                                         <TextBlock x:Uid="heyy" Margin="0,70,0,0" Foreground="White" FontWeight="SemiBold" TextAlignment="Center" FontSize="18" Text="Hey there!" />
                                         <TextBlock x:Uid="fide" Width="300" Margin="0,20,0,0" MaxLines="5" TextWrapping="Wrap" Foreground="White" TextAlignment="Center" FontSize="15" >
-                       Welcome to Denna! Denna will help you to plan your life; Just like successful people.
+                       Welcome to QBox! QBox will help you to have a better testing experiance.
 
                                         </TextBlock>
                                     </StackPanel>
@@ -36,10 +36,10 @@
                                 <FlipViewItem>
                                     <StackPanel Margin="0,0,0,0">
                                         <Image Source="/Assets/Icons/TodoList.png" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" Height="50"  Width="50" />
-                                        <TextBlock x:Uid="Planlife" FontWeight="Bold"  Margin="0,10,0,0" Foreground="White" TextAlignment="Center" FontSize="23" Text="PLAN YOUR LIFE" />
-                                        <TextBlock x:Uid="whattodo" Margin="0,70,0,0" Foreground="White" FontWeight="SemiBold" TextAlignment="Center" FontSize="18" Text="What shall I do today?" />
+                                        <TextBlock x:Uid="Planlife" FontWeight="Bold"  Margin="0,10,0,0" Foreground="White" TextAlignment="Center" FontSize="23" Text="TEST YOUR SELF" />
+                                        <TextBlock x:Uid="whattodo" Margin="0,70,0,0" Foreground="White" FontWeight="SemiBold" TextAlignment="Center" FontSize="18" Text="Hmmm let's challenge!" />
                                         <TextBlock x:Uid="dailylife" Width="300" Margin="0,20,0,0" MaxLines="5" TextWrapping="Wrap" Foreground="White" TextAlignment="Center" FontSize="15" >
-                       Plan your daily tasks. Do, mind, postpone and control your activities. Don't forget to add your hobbies in Denna :) Planning makes everything easier!
+                                         You can do any kind of tests in QBox in what lesson you prefer!
 
                                         </TextBlock>
                                     </StackPanel>
@@ -47,10 +47,10 @@
                                 <FlipViewItem>
                                     <StackPanel Margin="0,0,0,0">
                                         <Image Source="/Assets/Icons/CalendarDelete.png" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" Height="50"  Width="50" />
-                                        <TextBlock FontWeight="Bold" x:Uid="misser"  Margin="0,10,0,0" Foreground="White" TextAlignment="Center" FontSize="23" Text="DON'T MISS ANYTHING" />
-                                        <TextBlock x:Uid="donotre" Margin="0,70,0,0" Foreground="White" FontWeight="SemiBold" TextAlignment="Center" FontSize="18" Text="Oh... I don't remember!" />
+                                        <TextBlock FontWeight="Bold" x:Uid="misser"  Margin="0,10,0,0" Foreground="White" TextAlignment="Center" FontSize="23" Text="STAY UPDATED" />
+                                        <TextBlock x:Uid="donotre" Margin="0,70,0,0" Foreground="White" FontWeight="SemiBold" TextAlignment="Center" FontSize="18" Text="New questoins ?!??" />
                                         <TextBlock x:Uid="forget" Width="300" Margin="0,20,0,0" MaxLines="5" TextWrapping="Wrap" Foreground="White" TextAlignment="Center" FontSize="15" >
-                       We won't let you forget your activities in your wounderful day! You can set notifications or alarm for your tasks. Everything will go right on time :)
+                                         You can add questions to QBox database. Just ask your teacher to give you an excel file.
 
                                         </TextBlock>
                                     </StackPanel>

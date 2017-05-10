@@ -163,17 +163,7 @@
                 </VisualState>
             </VisualStateGroup>
 
-            <VisualStateGroup x:Name="PlayerPageStates">
-                <VisualState x:Name="PlayerPageState">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="0" />
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="Split.IsPaneOpen" Value="False" />
-                        <Setter Target="Split.DisplayMode" Value="Overlay" />
-                    </VisualState.Setters>
-                </VisualState>
-            </VisualStateGroup>
+            
         </VisualStateManager.VisualStateGroups>
 
     </Grid>

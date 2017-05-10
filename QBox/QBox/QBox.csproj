@@ -139,11 +139,9 @@
   <ItemGroup>
     <Content Include="Assets\Icons\AreaChart.png" />
     <Content Include="Assets\Icons\CalendarDelete.png" />
-    <Content Include="Assets\Icons\Denna logo Dark.png" />
-    <Content Include="Assets\Icons\Denna logo Green.png" />
-    <Content Include="Assets\Icons\Denna logo White.png" />
     <Content Include="Assets\Icons\DeskLamp.png" />
     <Content Include="Assets\Icons\Plus.png" />
+    <Content Include="Assets\Icons\Sahih.png" />
     <Content Include="Assets\Icons\TodoList.png" />
     <Content Include="Assets\Tiles\LargeTile.scale-100.png" />
     <Content Include="Assets\Tiles\LargeTile.scale-125.png" />
