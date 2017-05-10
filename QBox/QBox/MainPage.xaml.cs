@@ -53,33 +53,35 @@ namespace QBox
             {
                 case "Home":
                     Framer.Navigate(typeof(Main));
-                    Split.IsPaneOpen = false;
+                    if (Split.DisplayMode != SplitViewDisplayMode.Inline)
+                        Split.IsPaneOpen = false;
 
                     break;
                 case "Performance":
                     Framer.Navigate(typeof(Performance));
+                    if(Split.DisplayMode!= SplitViewDisplayMode.Inline)
                     Split.IsPaneOpen = false;
 
                     break;
                 case "Test":
                     Framer.Navigate(typeof(Test));
-                    Split.IsPaneOpen = false;
-
+                    if (Split.DisplayMode != SplitViewDisplayMode.Inline)
+                        Split.IsPaneOpen = false;
                     break;
                 case "Data":
                     Framer.Navigate(typeof(DB));
-                    Split.IsPaneOpen = false;
-
+                    if (Split.DisplayMode != SplitViewDisplayMode.Inline)
+                        Split.IsPaneOpen = false;
                     break;
                 case "About":
                     Framer.Navigate(typeof(About));
-                    Split.IsPaneOpen = false;
-
+                    if (Split.DisplayMode != SplitViewDisplayMode.Inline)
+                        Split.IsPaneOpen = false;
                     break;
                 case "Settings":
                     Framer.Navigate(typeof(Settings));
-                    Split.IsPaneOpen = false;
-
+                    if (Split.DisplayMode != SplitViewDisplayMode.Inline)
+                        Split.IsPaneOpen = false;
                     break;
 
 
