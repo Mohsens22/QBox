@@ -106,11 +106,24 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Migrations\20170511212410_MyFirstMigration.cs" />
+    <Compile Include="Migrations\20170511212410_MyFirstMigration.designer.cs">
+      <DependentUpon>20170511212410_MyFirstMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ModelModelSnapshot.cs" />
+    <Compile Include="Model.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SetNewQuestions.cs" />
     <Compile Include="SignHelper.cs" />
     <EmbeddedResource Include="Properties\Model.rd.xml" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite">
+      <Version>1.1.2</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools">
+      <Version>1.1.1</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>5.2.3</Version>
     </PackageReference>

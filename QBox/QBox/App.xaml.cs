@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
@@ -32,6 +33,11 @@ namespace QBox
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            using (var db = new Model.Model())
+            {
+                db.Database.Migrate();
+            }
+
         }
 
         /// <summary>
