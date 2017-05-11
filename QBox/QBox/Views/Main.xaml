@@ -5,9 +5,24 @@
     xmlns:local="using:QBox.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:VM="using:QBox.ViewModels"
+    xmlns:controls="using:QBox.Controls"
     mc:Ignorable="d">
 
-    <Grid Background="Red">
+    <Page.DataContext>
+        <VM:SwipePanelViewModel />
+    </Page.DataContext>
+    <StackPanel Background="White">
 
-    </Grid>
+        <Ellipse Margin="0,60,0,0" VerticalAlignment="Top"  HorizontalAlignment="Center" Height="100"  Width="100" >
+            <Ellipse.Fill>
+                <ImageBrush Stretch="UniformToFill" x:Name="avatar" ImageSource="{Binding Picture}" />
+            </Ellipse.Fill>
+        </Ellipse>
+        <TextBlock Text="{Binding Greet}"  FontWeight="Bold" VerticalAlignment="Bottom"
+             TextAlignment="Center" x:Name="news" FontSize="20" Margin="10,0,10,50" />
+
+
+        <controls:GraphControl Height="400" Width="400" Items="{x:Bind VM.items}" />
+    </StackPanel>
 </Page>

@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using QBox.ViewModels;
+using QBox.ViewModels;
 using PubSub;
 using Windows.UI.Xaml.Navigation;
 
@@ -24,11 +25,16 @@ namespace QBox.Views
     /// </summary>
     public sealed partial class Main : Page
     {
-        
+     
+        public ViewModels.SwipePanelViewModel VM { get; set; }
         public Main()
         {
             this.InitializeComponent();
-            
+            DataContextChanged += (s, e) =>
+            {
+                VM = DataContext as SwipePanelViewModel;
+            };
+
         }
 
         
