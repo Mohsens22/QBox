@@ -106,9 +106,9 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Migrations\20170511212410_MyFirstMigration.cs" />
-    <Compile Include="Migrations\20170511212410_MyFirstMigration.designer.cs">
-      <DependentUpon>20170511212410_MyFirstMigration.cs</DependentUpon>
+    <Compile Include="Migrations\20170511234235_Migration2.cs" />
+    <Compile Include="Migrations\20170511234235_Migration2.designer.cs">
+      <DependentUpon>20170511234235_Migration2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ModelModelSnapshot.cs" />
     <Compile Include="Model.cs" />

@@ -26,6 +26,7 @@ namespace QBox.Views
         public DB()
         {
             this.InitializeComponent();
+            
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {

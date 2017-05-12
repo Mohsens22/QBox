@@ -5,9 +5,38 @@
     xmlns:local="using:QBox.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:VM="using:QBox.ViewModels"
     mc:Ignorable="d">
+    <Page.DataContext>
+        <VM:DBViewModel />
+    </Page.DataContext>
+    <Grid Background="White">
+        <StackPanel>
+            <TextBox Text="{Binding Ques,Mode=TwoWay}" PlaceholderText="Question" />
+            <TextBox Text="{Binding A1,Mode=TwoWay}" PlaceholderText="A1" />
+            <TextBox Text="{Binding A2,Mode=TwoWay}" PlaceholderText="A2" />
+            <TextBox Text="{Binding A3,Mode=TwoWay}" PlaceholderText="A3" />
+            <TextBox Text="{Binding A4,Mode=TwoWay}" PlaceholderText="A4" />
+            <TextBox Text="{Binding Sahih,Mode=TwoWay}" PlaceholderText="Correct" />
+            <ComboBox  ItemsSource="{Binding Courses}" x:Name="Var" >
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}" Tag="{Binding ID}" />
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <ListView ItemsSource="{Binding Questions}" MinHeight="300" />
 
-    <Grid Background="Blue">
 
+            <TextBox Text="{Binding Dars,Mode=TwoWay}" PlaceholderText="Lesson" />
+            <Button Background="Black" Command="{Binding AddDars}" Foreground="Wheat"  Content="Add Lesson" />
+            <Button Background="Red" Command="{Binding AddQ}" Foreground="White"  Content="Add Question" />
+
+
+
+
+
+
+        </StackPanel>
     </Grid>
 </Page>

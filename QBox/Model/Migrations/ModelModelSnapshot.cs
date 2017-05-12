@@ -15,20 +15,20 @@ namespace Model.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2");
 
-            modelBuilder.Entity("Model.Answers", b =>
+            modelBuilder.Entity("Model.Answer", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Answer");
-
                     b.Property<int>("AssignedFlag");
 
-                    b.Property<int?>("QuestionsID");
+                    b.Property<string>("Javab");
+
+                    b.Property<int?>("QuestionID");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("QuestionsID");
+                    b.HasIndex("QuestionID");
 
                     b.ToTable("Answers");
                 });
@@ -42,10 +42,10 @@ namespace Model.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Course");
+                    b.ToTable("Courses");
                 });
 
-            modelBuilder.Entity("Model.Questions", b =>
+            modelBuilder.Entity("Model.Question", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
@@ -54,7 +54,7 @@ namespace Model.Migrations
 
                     b.Property<int?>("CourseID");
 
-                    b.Property<string>("Question");
+                    b.Property<string>("Soal");
 
                     b.HasKey("ID");
 
@@ -63,7 +63,7 @@ namespace Model.Migrations
                     b.ToTable("Questions");
                 });
 
-            modelBuilder.Entity("Model.Stats", b =>
+            modelBuilder.Entity("Model.Stat", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
@@ -83,21 +83,21 @@ namespace Model.Migrations
                     b.ToTable("Stats");
                 });
 
-            modelBuilder.Entity("Model.Answers", b =>
+            modelBuilder.Entity("Model.Answer", b =>
                 {
-                    b.HasOne("Model.Questions")
+                    b.HasOne("Model.Question")
                         .WithMany("Answer")
-                        .HasForeignKey("QuestionsID");
+                        .HasForeignKey("QuestionID");
                 });
 
-            modelBuilder.Entity("Model.Questions", b =>
+            modelBuilder.Entity("Model.Question", b =>
                 {
                     b.HasOne("Model.Course", "Course")
                         .WithMany()
                         .HasForeignKey("CourseID");
                 });
 
-            modelBuilder.Entity("Model.Stats", b =>
+            modelBuilder.Entity("Model.Stat", b =>
                 {
                     b.HasOne("Model.Course", "Course")
                         .WithMany()
