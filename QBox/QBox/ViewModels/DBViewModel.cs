@@ -23,6 +23,7 @@ namespace QBox.ViewModels
         }
         public DBViewModel()
         {
+            
             Courses = new ObservableCollection<Model.Course>();
             Questions = new ObservableCollection<Model.Question>();
             var x =Model.SetNewQuestions.GetCourse(3);
@@ -35,7 +36,7 @@ namespace QBox.ViewModels
             {
                 Questions.Add(item);
             }
-
+            
             AddDars = new MyCommand();
             AddDars.CanExecuteFunc = obj => true;
             AddDars.ExecuteFunc = AddDarsAsync;
@@ -58,7 +59,7 @@ namespace QBox.ViewModels
                     new Model.Answer() {AssignedFlag=4,Javab=A4 }
                     },
                     Course = Courses.FirstOrDefault(),
-                    Correct = Sahih
+                    Correct = Sahih+1
             
                     
                 }
@@ -78,6 +79,28 @@ namespace QBox.ViewModels
         private string _A4;
         private int _sahih;
         private string _dars;
+        private int _Selecteddars;
+        public int SelectedDars
+        {
+            get
+            {
+                return _Selecteddars;
+
+            }
+            set
+            {
+
+                if (_Selecteddars != value)
+                {
+                    _Selecteddars = value;
+                    if (PropertyChanged != null)
+                    {
+                        PropertyChanged(this,
+                            new PropertyChangedEventArgs("SelectedDars"));
+                    }
+                }
+            }
+        }
         public string Dars
         {
             get
@@ -99,7 +122,6 @@ namespace QBox.ViewModels
                 }
             }
         }
-
         public string Ques
         {
             get

@@ -22,7 +22,24 @@ namespace QBox.Controls
         public TemplatedTextBox()
         {
             this.InitializeComponent();
+            
         }
+
+
+
+
+        public FontFamily FontGlyph
+        {
+            get { return (FontFamily)GetValue(FontGlyphProperty); }
+            set { SetValue(FontGlyphProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for FontGlyph.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty FontGlyphProperty =
+            DependencyProperty.Register("FontGlyph", typeof(FontFamily), typeof(TemplatedTextBox), new PropertyMetadata(null));
+
+
+
         public string Glyph
         {
             get { return (string)GetValue(GlyphProperty); }

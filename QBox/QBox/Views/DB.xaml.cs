@@ -26,11 +26,31 @@ namespace QBox.Views
         public DB()
         {
             this.InitializeComponent();
+           
             
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             this.Publish("Database");
+        }
+
+        private void Var_Loaded(object sender, RoutedEventArgs e)
+        {
+            Var.SelectedIndex = 0;
+        }
+
+        private void Vax_Loaded(object sender, RoutedEventArgs e)
+        {
+            Vax.SelectedIndex = 0;
+        }
+
+        private void AppBarButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Opener.Visibility == Visibility.Collapsed)
+                Opener.Visibility = Visibility.Visible;
+            else
+                Opener.Visibility = Visibility.Collapsed;
+
         }
     }
 }
