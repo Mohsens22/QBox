@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace Model
             {
                
                 db.Questions.Add(question);
+                db.Entry(question.Course).State = EntityState.Unchanged;
                 db.SaveChanges();
                 
             }
