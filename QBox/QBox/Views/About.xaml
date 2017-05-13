@@ -8,7 +8,7 @@
     mc:Ignorable="d">
 
    
-    <Grid Background="{ThemeResource AppBackgroundColor}">
+    <Grid Background="Transparent">
         <Grid>
             <Image Height="200" VerticalAlignment="Bottom" HorizontalAlignment="Left" Source="/Assets/Headings/h14.png" Stretch="UniformToFill"      />
         </Grid>
