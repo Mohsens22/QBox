@@ -83,7 +83,7 @@
                                         <ColumnDefinition Width="6*"/>
                                     </Grid.ColumnDefinitions>
                                     <TextBlock Text="" FontSize="18" FontFamily="Segoe MDL2 Assets" Grid.Column="0" AutomationProperties.AccessibilityView="Raw"/>
-                                    <TextBlock x:Uid="PageMasterSplitAlbumsPage" Text="Quiz box" Grid.Column="1" AutomationProperties.AccessibilityView="Raw"/>
+                                    <TextBlock x:Uid="PageMasterSplitAlbumsPage" Text="Database" Grid.Column="1" AutomationProperties.AccessibilityView="Raw"/>
                                 </Grid>
                             </ListViewItem>
 

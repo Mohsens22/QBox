@@ -12,7 +12,7 @@
     <Page.DataContext>
         <VM:SwipePanelViewModel />
     </Page.DataContext>
-    <StackPanel Background="White">
+    <StackPanel Background="{ThemeResource AppBackgroundColor}">
 
         <Ellipse Margin="0,60,0,0" VerticalAlignment="Top"  HorizontalAlignment="Center" Height="100"  Width="100" >
             <Ellipse.Fill>

@@ -97,6 +97,7 @@
     </Compile>
     <Compile Include="Classes\MyCommand.cs" />
     <Compile Include="Classes\NameValueItem.cs" />
+    <Compile Include="Classes\Themesetter.cs" />
     <Compile Include="Controls\GraphControl.xaml.cs">
       <DependentUpon>GraphControl.xaml</DependentUpon>
     </Compile>

@@ -37,6 +37,17 @@ namespace QBox
             {
                 db.Database.Migrate();
             }
+            if (Classes.Themesetter.GetApplicationTheme() != "System")
+            {
+                if (Classes.Themesetter.GetApplicationTheme() == "Dark")
+                {
+                    App.Current.RequestedTheme = ApplicationTheme.Dark;
+                }
+                else
+                {
+                    App.Current.RequestedTheme = ApplicationTheme.Light;
+                }
+            }
 
         }
 

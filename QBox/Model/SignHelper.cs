@@ -23,7 +23,16 @@ namespace Model
         {
             return ApplicationData.Current.LocalSettings.Values["Family"] as string;
         }
-        
+        public static void SetName(string Name)
+        {
+              ApplicationData.Current.LocalSettings.Values["Name"] = Name;
+        }
+        public static void SetFamily(string Family)
+        {
+             ApplicationData.Current.LocalSettings.Values["Family"] = Family;
+        }
+
+
         public static bool IsLoged()
         {
             bool logged = false;
