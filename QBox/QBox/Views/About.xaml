@@ -7,7 +7,46 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="Green">
+   
+    <Grid Background="{ThemeResource AppBackgroundColor}">
+        <Grid>
+            <Image Height="200" VerticalAlignment="Bottom" HorizontalAlignment="Left" Source="/Assets/Headings/h14.png" Stretch="UniformToFill"      />
+        </Grid>
+        <ScrollViewer>
 
+            <Grid>
+
+                <ScrollViewer Margin="0,0,0,180">
+                    <StackPanel >
+                        <Image Source="ms-appx:///Assets/Tiles/Square44x44Logo.scale-400.png" Height="150" Width="150"  />
+                        <StackPanel  Margin="20,0,20,0" HorizontalAlignment="Center" Orientation="Horizontal" >
+                            <TextBlock FontWeight="Bold" FontSize="40" Text="QBox" Foreground="{StaticResource SystemControlBackgroundAccentBrush}" />
+                            <TextBlock x:Name="ApplicationVersion" Margin="3,0,0,5" VerticalAlignment="Bottom" FontSize="15" Text="V 12.14.313.40" Foreground="{StaticResource SystemControlBackgroundAccentBrush}" />
+                        </StackPanel>
+                        <TextBlock x:Uid="Info" TextAlignment="Center" Margin="20,20,20,0" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Bottom" Opacity="0.8" FontSize="15" >
+                    This app is dedicated for having the best testing and learnin experiance for students.
+                    <LineBreak />
+                        Score the bests by QBox
+
+                        </TextBlock>
+                        <HyperlinkButton x:Uid="Translate" HorizontalAlignment="Center" Click="HyperlinkButton_Click" Content="Project is here on Github" />
+
+
+
+                    </StackPanel>
+                </ScrollViewer>
+                <StackPanel VerticalAlignment="Bottom" >
+                    <TextBlock x:Uid="Dev" TextAlignment="Center" FontWeight="SemiBold" >
+                    DEVELOPED WITH LOVE BY
+                    <LineBreak />
+                    MOHSEN SEIFI
+                    <LineBreak />
+
+                    </TextBlock>
+
+
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </Page>
