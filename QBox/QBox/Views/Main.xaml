@@ -13,16 +13,18 @@
         <VM:SwipePanelViewModel />
     </Page.DataContext>
     <StackPanel Background="Transparent">
-
-        <Ellipse Margin="0,60,0,0" VerticalAlignment="Top"  HorizontalAlignment="Center" Height="100"  Width="100" >
+        <StackPanel Margin="30,0,0,0" Orientation="Horizontal" >
+            <Ellipse Margin="0,0,0,0" VerticalAlignment="Top"  HorizontalAlignment="Center" Height="100"  Width="100" >
             <Ellipse.Fill>
                 <ImageBrush Stretch="UniformToFill" x:Name="avatar" ImageSource="{Binding Picture}" />
             </Ellipse.Fill>
-        </Ellipse>
-        <TextBlock Text="{Binding Greet}"  FontWeight="Bold" VerticalAlignment="Bottom"
-             TextAlignment="Center" x:Name="news" FontSize="20" Margin="10,0,10,50" />
+            </Ellipse>
+            <TextBlock Text="{Binding Greet}"  FontWeight="SemiBold" VerticalAlignment="Center"
+             TextAlignment="Center" x:Name="news" FontSize="30"  />
 
+        </StackPanel>
 
-        <controls:GraphControl Height="400" Width="400" Items="{x:Bind VM.items}" />
+        <!--<controls:GraphControl  Header="Your performance" Done="3" Pending="2" Height="300" Margin="30,5" Items="{x:Bind VM.items}" />-->
+        
     </StackPanel>
 </Page>

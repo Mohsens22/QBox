@@ -101,9 +101,23 @@
     <Compile Include="Controls\GraphControl.xaml.cs">
       <DependentUpon>GraphControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\IconItem.xaml.cs">
+      <DependentUpon>IconItem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\TemplatedTextBox.xaml.cs">
       <DependentUpon>TemplatedTextBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\DateTimeToTimeStringConverter.cs" />
+    <Compile Include="Converters\DoubleToStringConverter.cs" />
+    <Compile Include="Converters\InputScopeConverter.cs" />
+    <Compile Include="Converters\IntToDoneConverter.cs" />
+    <Compile Include="Converters\IntToNotdoneConverter.cs" />
+    <Compile Include="Converters\IntToPendingConverter.cs" />
+    <Compile Include="Converters\IntToPostponeConverter.cs" />
+    <Compile Include="Converters\IntToTaskCounterConverter.cs" />
+    <Compile Include="Converters\IsdoneToColorConverter.cs" />
+    <Compile Include="Converters\IsdoneToGlyphConverter.cs" />
+    <Compile Include="Converters\TextToHashtagConverter.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -206,6 +220,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\IconItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\TemplatedTextBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -263,9 +281,7 @@
       <Version>2.3.0</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Converters\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{2feced56-3196-4518-a5f6-d01a15c4a726}</Project>

@@ -60,6 +60,39 @@ namespace QBox.Controls
         public static readonly DependencyProperty ItemsProperty =
             DependencyProperty.Register("Items", typeof(ObservableCollection<NameValueItem>), typeof(GraphControl), new PropertyMetadata(null));
 
+        public string Header
+        {
+            get { return (string)GetValue(HeaderProperty); }
+            set { SetValue(HeaderProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Header.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty HeaderProperty =
+            DependencyProperty.Register("Header", typeof(string), typeof(GraphControl), new PropertyMetadata(null));
+
+
+        public int Done
+        {
+            get { return (int)GetValue(DoneProperty); }
+            set { SetValue(DoneProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Done.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty DoneProperty =
+            DependencyProperty.Register("Done", typeof(int), typeof(GraphControl), new PropertyMetadata(0));
+
+
+
+        public int Pending
+        {
+            get { return (int)GetValue(PendingProperty); }
+            set { SetValue(PendingProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Pending.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty PendingProperty =
+            DependencyProperty.Register("Pending", typeof(int), typeof(GraphControl), new PropertyMetadata(0));
+
 
     }
 }
