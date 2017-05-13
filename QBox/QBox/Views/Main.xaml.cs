@@ -43,5 +43,15 @@ namespace QBox.Views
         {
             this.Publish("Home");
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Test));
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Performance));
+        }
     }
 }
