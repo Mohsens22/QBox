@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
@@ -128,6 +129,99 @@ namespace QBox.Views
         {
             Model.SignHelper.SetName(namebox.Text);
         }
-        
+
+        private async void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Mybar.Visibility = Visibility.Visible;
+            await AddFakeDars();
+            await AddFakeQuestions();
+            Mybar.Visibility = Visibility.Collapsed;
+
+
+           
+            
+
+
+        }
+        private Random _random = new Random();
+
+        async Task AddFakeDars()
+        {
+            try
+            {
+                Model.SetNewQuestions.SetCourse(new Model.Course() { Name = "Math", ID = 101 });
+                Model.SetNewQuestions.SetCourse(new Model.Course() { Name = "Physins", ID = 102 });
+                Model.SetNewQuestions.SetCourse(new Model.Course() { Name = "Computer", ID = 103 });
+            }
+            catch { }
+
+        }
+        async Task AddFakeQuestions()
+        {
+
+            List<Model.Question> Questions = new List<Model.Question>();
+            for (int i = 0; i < 100; i++)
+            {
+                Questions.Add(new Model.Question
+                {
+                    Soal = "Soal with the index of" + i,
+                    Answer = new List<Model.Answer>
+                    {
+
+                         new Model.Answer{AssignedFlag=1,Javab="1St answer for"+i },
+                         new Model.Answer{AssignedFlag=2,Javab="2Nd answer for"+i },
+                         new Model.Answer{AssignedFlag=3,Javab="3Rd answer for"+i },
+                         new Model.Answer{AssignedFlag=4,Javab="4Th answer for"+i },
+                    },
+                    Correct = _random.Next(1, 4),
+                    Course = new Model.Course { Name = "Math", ID = 101 }
+
+
+                });
+            }
+            for (int i = 0; i < 100; i++)
+            {
+                Questions.Add(new Model.Question
+                {
+                    Soal = "Soal with the index of" + i,
+                    Answer = new List<Model.Answer>
+                    {
+
+                         new Model.Answer{AssignedFlag=1,Javab="1St answer for"+i },
+                         new Model.Answer{AssignedFlag=2,Javab="2Nd answer for"+i },
+                         new Model.Answer{AssignedFlag=3,Javab="3Rd answer for"+i },
+                         new Model.Answer{AssignedFlag=4,Javab="4Th answer for"+i },
+                    },
+                    Correct = _random.Next(1, 4),
+                    Course = new Model.Course { Name = "Physins", ID = 102 }
+
+
+                });
+            }
+            for (int i = 0; i < 100; i++)
+            {
+                Questions.Add(new Model.Question
+                {
+                    Soal = "Soal with the index of" + i,
+                    Answer = new List<Model.Answer>
+                    {
+
+                         new Model.Answer{AssignedFlag=1,Javab="1St answer for"+i },
+                         new Model.Answer{AssignedFlag=2,Javab="2Nd answer for"+i },
+                         new Model.Answer{AssignedFlag=3,Javab="3Rd answer for"+i },
+                         new Model.Answer{AssignedFlag=4,Javab="4Th answer for"+i },
+                    },
+                    Correct = _random.Next(1, 4),
+                    Course = new Model.Course { Name = "Computer", ID = 103 }
+
+
+                });
+            }
+            foreach (var item in Questions)
+            {
+                Model.SetNewQuestions.SetQuestion(item);
+            }
+
+        }
     }
 }

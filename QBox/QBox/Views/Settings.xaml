@@ -9,7 +9,9 @@
 
     <Grid Background="Transparent">
         <ScrollViewer>
-            <StackPanel Padding="10,0,10,0" HorizontalAlignment="Center" MaxWidth="900" MinWidth="20" Margin="0,40,0,0" >
+            <StackPanel>
+                <ProgressBar x:Name="Mybar"  IsEnabled="True" Visibility="Collapsed" IsIndeterminate="True" />
+                <StackPanel Padding="10,0,10,0" HorizontalAlignment="Center" MaxWidth="900" MinWidth="20" Margin="0,40,0,0" >
                 <RelativePanel  >
                     <Grid x:Name="Propicc" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True">
                         <Ellipse   HorizontalAlignment="Center" Height="80"  Width="80" >
@@ -46,7 +48,10 @@
 
                 
                 <TextBlock x:Uid="Restart" Margin="0,15,0,0" FontSize="12" MaxWidth="400" TextAlignment="Center" Text="You might need to restart to apply theme changes." />
-                
+
+
+                <Button Margin="0,20,0,0" HorizontalAlignment="Center" Click="Button_Click" Height="30" Width="150" Content="FILL FAKE DATA" />
+            </StackPanel>
             </StackPanel>
         </ScrollViewer>
 
