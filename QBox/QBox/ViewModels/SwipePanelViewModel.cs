@@ -18,19 +18,42 @@ namespace QBox.ViewModels
         {
             setters();   
         }
+
         private async void setters()
         {
             items = new ObservableCollection<NameValueItem>();
-            for (int i = 0; i < 7; i++)
-            {
-                items.Add(new NameValueItem { Name = "Test" + i, Value = _random.Next(10, 100) });
-            }
+           
             Greet = "Dear " + Model.SignHelper.GetName();
             Windows.Storage.StorageFolder storageFolder =
     Windows.Storage.ApplicationData.Current.LocalFolder;
             Windows.Storage.StorageFile sampleFile =
                 await storageFolder.GetFileAsync("avatar.jpg");
             Picture = sampleFile.Path;
+
+            List<Model.Stat> myls = new List<Stat>();
+            myls = Model.SetNewQuestions.GetStats();
+            int _all=0;
+            Done = 0;
+            myls.Reverse();
+            int _num = 0;
+            foreach (var item in myls)
+            {
+                
+                Done = Done+ item.Correct;
+                _all =_all+ item.All;
+                if(_num<7)
+                {
+                    int percentsuspend;
+                    if (item.All != 0)
+                        percentsuspend = (int)Math.Round((double)(100 * item.Correct) / item.All);
+                    else
+                        percentsuspend = 0;
+                    items.Add(new NameValueItem { Name = "Test"+_num , Value = percentsuspend });
+                }
+                _num++;
+            }
+            Sucked = _all - Done;
+            
         }
         public ObservableCollection<NameValueItem> items {
             get;
@@ -84,5 +107,7 @@ namespace QBox.ViewModels
 
             }
         }
+        public int Done { get; set; }
+        public int Sucked { get; set; }
     }
 }

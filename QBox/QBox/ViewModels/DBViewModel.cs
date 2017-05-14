@@ -26,8 +26,8 @@ namespace QBox.ViewModels
             
             Courses = new ObservableCollection<Model.Course>();
             Questions = new ObservableCollection<Model.Question>();
-            var x =Model.SetNewQuestions.GetCourse(3);
-            var y = Model.SetNewQuestions.GetQuestion(3);
+            var x =Model.SetNewQuestions.GetCourse();
+            var y = Model.SetNewQuestions.GetQuestion();
             foreach (var item in x)
             {
                 Courses.Add(item);

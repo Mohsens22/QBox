@@ -135,6 +135,7 @@ namespace QBox.Views
             Mybar.Visibility = Visibility.Visible;
             await AddFakeDars();
             await AddFakeQuestions();
+            await AddFakeStats();
             Mybar.Visibility = Visibility.Collapsed;
 
 
@@ -144,7 +145,47 @@ namespace QBox.Views
 
         }
         private Random _random = new Random();
+        async Task AddFakeStats()
+        {
+            List<Model.Stat> Questions = new List<Model.Stat>();
+            for (int i = 0; i < 7; i++)
+            {
+                Questions.Add(new Model.Stat
+                {
+                    All = _random.Next(20, 30),
+                    Correct = _random.Next(1, 20),
+                    Course = new Model.Course { Name = "Math", ID = 101 }
 
+
+                });
+            }
+            for (int i = 0; i < 7; i++)
+            {
+                Questions.Add(new Model.Stat
+                {
+                    All = _random.Next(20, 30),
+                    Correct = _random.Next(1, 20),
+                    Course = new Model.Course { Name = "Computer", ID = 103 }
+
+
+                });
+            }
+            for (int i = 0; i < 7; i++)
+            {
+                Questions.Add(new Model.Stat
+                {
+                    All = _random.Next(20, 30),
+                    Correct = _random.Next(1, 20),
+                    Course = new Model.Course { Name = "Physins", ID = 102 }
+
+
+                });
+            }
+            foreach (var item in Questions)
+            {
+                Model.SetNewQuestions.SetStats(item);
+            }
+        }
         async Task AddFakeDars()
         {
             try

@@ -25,7 +25,7 @@
 
         </StackPanel>
 
-        <controls:GraphControl  Header="Your performance" Done="3" Pending="2" Height="300" Margin="30,15" Items="{x:Bind VM.items}" />
+        <controls:GraphControl  Header="Your performance" Done="{Binding Done}" Pending="{Binding Sucked}" Height="300" Margin="30,15" Items="{x:Bind VM.items}" />
 
             <StackPanel Margin="30,10,0,0">
                 <TextBlock FontSize="18"  Text="Where to go next?" />
