@@ -98,11 +98,18 @@
     <Compile Include="Classes\MyCommand.cs" />
     <Compile Include="Classes\NameValueItem.cs" />
     <Compile Include="Classes\Themesetter.cs" />
+    <Compile Include="Controls\DoublePi.xaml.cs">
+      <DependentUpon>DoublePi.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\GraphControl.xaml.cs">
       <DependentUpon>GraphControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\IconItem.xaml.cs">
       <DependentUpon>IconItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PieChart.cs" />
+    <Compile Include="Controls\TemplatedChart.xaml.cs">
+      <DependentUpon>TemplatedChart.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\TemplatedTextBox.xaml.cs">
       <DependentUpon>TemplatedTextBox.xaml</DependentUpon>
@@ -155,7 +162,6 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="QBox_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Icons\AreaChart.png" />
@@ -216,11 +222,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Controls\DoublePi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\GraphControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\IconItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TemplatedChart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

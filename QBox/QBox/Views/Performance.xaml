@@ -4,10 +4,15 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:QBox.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:controls="using:QBox.Controls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="Yellow">
+    <Grid Background="White">
+
+        <controls:TemplatedChart Percent1="50" Percent2="20" SegmentColor="{StaticResource YellowBrush}" DoneTasks="3" 
+
+                                                    PostponedTasks="4" PendingTasks="4" GlyphBrush="Gray"     HorizontalAlignment="Center"        Margin="0,40,0,0"           />
 
     </Grid>
 </Page>

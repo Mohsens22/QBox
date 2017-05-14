@@ -15,16 +15,16 @@ namespace QBox.Converters
             int val = (int)value;
             if (val == 0)
             {
-                x = "Nothing postponed.";
+                x = "Nothing.";
             }
             else if (val == 1)
             {
-                x = val + " task postponed.";
+                x = val + " Min.";
 
             }
             else
             {
-                x = val + " tasks postponed.";
+                x = val + " Mins.";
 
             }
             return x;

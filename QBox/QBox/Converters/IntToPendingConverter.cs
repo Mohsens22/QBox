@@ -15,16 +15,16 @@ namespace QBox.Converters
             int val = (int)value;
             if (val == 0)
             {
-                x = "Nothing todo.";
+                x = "Nothing.";
             }
             else if (val == 1)
             {
-                x = val + " task pending.";
+                x = val + " Test at all.";
 
             }
             else
             {
-                x = val + " tasks pending.";
+                x = val + " tests at all.";
 
             }
             return x;

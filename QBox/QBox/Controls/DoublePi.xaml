@@ -1,0 +1,53 @@
+﻿<UserControl
+    x:Class="QBox.Controls.DoublePi"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:QBox.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converter="using:QBox.Converters"
+    mc:Ignorable="d"
+    d:DesignHeight="200"
+    d:DesignWidth="200">
+    <UserControl.Resources>
+        <converter:DoubleToStringConverter x:Key="DoubleToStringConverter" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid >
+
+
+            <local:PieChart x:Name="todaysus"
+                            Radius="75"
+                            Segment360Color="Transparent"         
+                            BackgroundColor="Transparent"
+                            SegmentColor="{x:Bind SegmentColor1,Mode=OneWay}"
+                                          Percentage="{x:Bind Percentage1,Mode=OneWay}"
+                            StrokeThickness="19" >
+               
+            </local:PieChart>
+
+            <local:PieChart  x:Name="todaypie"
+                            Radius="50"
+                                          Percentage="{x:Bind Percentage2,Mode=OneWay}"
+                            SegmentColor="{x:Bind SegmentColor2,Mode=OneWay}"
+                            BackgroundColor="Transparent"
+                           Segment360Color="Transparent"
+                            StrokeThickness="19"
+                              >
+               
+
+            </local:PieChart>
+
+            <TextBlock x:Name="todayper" 
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                                     FontWeight="SemiBold"  
+                                   Foreground="{x:Bind SegmentColor2,Mode=OneWay}"
+                                  Text="{x:Bind Percentage2,Mode=OneWay , Converter={StaticResource DoubleToStringConverter}}"
+                                   
+                       FontSize="20"
+                        />
+
+        </Grid>
+    </Grid>
+</UserControl>

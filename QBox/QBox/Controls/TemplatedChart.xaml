@@ -1,0 +1,38 @@
+﻿<UserControl
+    x:Class="QBox.Controls.TemplatedChart"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:QBox.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:coverter="using:QBox.Converters"
+    mc:Ignorable="d"
+    >
+    <UserControl.Resources>
+        <coverter:IntToPendingConverter x:Key="IntToPendingConverter" />
+        <coverter:IntToDoneConverter x:Key="IntToDoneConverter" />
+
+        <coverter:IntToPostponeConverter x:Key="IntToPostponeConverter" />
+
+    </UserControl.Resources>
+    <RelativePanel>
+
+        <local:DoublePi x:Name="Nc" SegmentColor1="{x:Bind SegmentColor,Mode=OneWay}" SegmentColor2="#20C8A5" HorizontalAlignment="Left" Percentage1="100" Percentage2="{x:Bind Percent2,Mode=OneWay}" 
+                RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True"        />
+        <Grid RelativePanel.RightOf="Nc" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignRightWithPanel="True">
+            <StackPanel VerticalAlignment="Center" Margin="0">
+
+
+
+                <local:IconItem Height="50" FontSizeGlyph="25" Glyph="" Brush="{StaticResource YellowBrush}" Text="{x:Bind PendingTasks,Mode=OneWay ,Converter={StaticResource IntToPendingConverter}}" />
+                <local:IconItem Height="50" FontSizeGlyph="23" Glyph="" Brush="{StaticResource GreenBrush }" Text="{x:Bind DoneTasks,Mode=OneWay,Converter={StaticResource IntToDoneConverter}}" />
+                <local:IconItem Height="50" FontSizeGlyph="27" Glyph="" Brush="{x:Bind GlyphBrush,Mode=OneWay}" Text="{x:Bind PostponedTasks,Mode=OneWay ,Converter={StaticResource IntToPostponeConverter}}" />
+
+                <local:IconItem Height="50" FontSizeGlyph="27" Glyph="" Brush="{x:Bind GlyphBrush,Mode=OneWay}" Text="{x:Bind Time}" />
+
+                <local:IconItem Height="50" FontSizeGlyph="27" Glyph="" Brush="{x:Bind GlyphBrush,Mode=OneWay}" Text="{x:Bind Dars}" />
+            </StackPanel>
+        </Grid>
+
+    </RelativePanel>
+</UserControl>
