@@ -22,7 +22,10 @@ namespace QBox.Controls
         public TemplatedChart()
         {
             this.InitializeComponent();
+            
+
         }
+        public Double Percentage { get; set; }
         public SolidColorBrush SegmentColor
         {
             get { return (SolidColorBrush)GetValue(SegmentColorProperty); }
@@ -46,31 +49,14 @@ namespace QBox.Controls
 
 
 
-        public Double Percent1
-        {
-            get { return (Double)GetValue(Percent1Property); }
-            set { SetValue(Percent1Property, value); }
-        }
-
-        // Using a DependencyProperty as the backing store for Percent1.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty Percent1Property =
-            DependencyProperty.Register("Percent1", typeof(Double), typeof(TemplatedChart), new PropertyMetadata(null));
-
-
-        public Double Percent2
-        {
-            get { return (Double)GetValue(Percent2Property); }
-            set { SetValue(Percent2Property, value); }
-        }
-
-        // Using a DependencyProperty as the backing store for Percent2.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty Percent2Property =
-            DependencyProperty.Register("Percent2", typeof(Double), typeof(TemplatedChart), new PropertyMetadata(null));
-
-
+        
+        
         public int DoneTasks
         {
-            get { return (int)GetValue(DoneTasksProperty); }
+            get { return (int)GetValue(DoneTasksProperty);
+
+                
+            }
             set { SetValue(DoneTasksProperty, value); }
         }
 
@@ -92,9 +78,17 @@ namespace QBox.Controls
 
         public int PendingTasks
         {
-            get { return (int)GetValue(PendingTasksProperty); }
-            set { SetValue(PendingTasksProperty, value); }
+            get {
+               
+                return (int)GetValue(PendingTasksProperty);
+                
+            }
+            set { SetValue(PendingTasksProperty, value);
+
+               
+            }
         }
+        
 
         // Using a DependencyProperty as the backing store for PendingTasks.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty PendingTasksProperty =
@@ -104,15 +98,21 @@ namespace QBox.Controls
 
 
 
-        public string Time
+
+
+
+
+        public string TheTime
         {
-            get { return (string)GetValue(TimeProperty); }
-            set { SetValue(TimeProperty, value); }
+            get { return (string)GetValue(TheTimeProperty); }
+            set { SetValue(TheTimeProperty, value); }
         }
 
-        // Using a DependencyProperty as the backing store for Time.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty TimeProperty =
-            DependencyProperty.Register("Time", typeof(string), typeof(TemplatedChart), new PropertyMetadata(null));
+        // Using a DependencyProperty as the backing store for TheTime.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty TheTimeProperty =
+            DependencyProperty.Register("TheTime", typeof(string), typeof(TemplatedChart), new PropertyMetadata(null));
+
+
 
 
 

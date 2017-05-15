@@ -1,4 +1,5 @@
 ﻿using PubSub;
+using QBox.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -23,9 +24,14 @@ namespace QBox.Views
     /// </summary>
     public sealed partial class Performance : Page
     {
+        public ViewModels.PerformanceViewModel VM { get; set; }
         public Performance()
         {
             this.InitializeComponent();
+            DataContextChanged += (s, e) =>
+            {
+                VM = DataContext as PerformanceViewModel;
+            };
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {

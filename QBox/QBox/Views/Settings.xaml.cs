@@ -154,7 +154,8 @@ namespace QBox.Views
                 {
                     All = _random.Next(20, 30),
                     Correct = _random.Next(1, 20),
-                    Course = new Model.Course { Name = "Math", ID = 101 }
+                    Course = new Model.Course { Name = "Math", ID = 101 },Created=DateTime.UtcNow
+                    
 
 
                 });
@@ -165,7 +166,8 @@ namespace QBox.Views
                 {
                     All = _random.Next(20, 30),
                     Correct = _random.Next(1, 20),
-                    Course = new Model.Course { Name = "Computer", ID = 103 }
+                    Course = new Model.Course { Name = "Computer", ID = 103 },
+                    Created = DateTime.UtcNow
 
 
                 });
@@ -176,7 +178,8 @@ namespace QBox.Views
                 {
                     All = _random.Next(20, 30),
                     Correct = _random.Next(1, 20),
-                    Course = new Model.Course { Name = "Physins", ID = 102 }
+                    Course = new Model.Course { Name = "Physins", ID = 102 },
+                    Created = DateTime.UtcNow
 
 
                 });

@@ -36,12 +36,20 @@ namespace QBox.Views
 
         private void Var_Loaded(object sender, RoutedEventArgs e)
         {
-            Var.SelectedIndex = 0;
+            try
+            {
+                Var.SelectedIndex = 0;
+            }
+            catch { }
         }
 
         private void Vax_Loaded(object sender, RoutedEventArgs e)
         {
-            Vax.SelectedIndex = 0;
+            try {
+                Vax.SelectedIndex = 0;
+            }
+            catch { }
+            
         }
 
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
