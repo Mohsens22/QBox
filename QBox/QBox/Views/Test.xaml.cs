@@ -26,9 +26,11 @@ namespace QBox.Views
         public Test()
         {
             this.InitializeComponent();
+            
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            TFrame.Navigate(typeof(SubTest.Selection));
             this.Publish("Test");
         }
     }
