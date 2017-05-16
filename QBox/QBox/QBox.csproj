@@ -95,6 +95,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Classes\CourseItems.cs" />
     <Compile Include="Classes\MyCommand.cs" />
     <Compile Include="Classes\NameValueItem.cs" />
     <Compile Include="Classes\Themesetter.cs" />
