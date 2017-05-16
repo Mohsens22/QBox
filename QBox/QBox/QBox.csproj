@@ -152,6 +152,15 @@
     <Compile Include="Views\SignIn.xaml.cs">
       <DependentUpon>SignIn.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\SubTest\ExamInterface.xaml.cs">
+      <DependentUpon>ExamInterface.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubTest\FinalCard.xaml.cs">
+      <DependentUpon>FinalCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubTest\Selection.xaml.cs">
+      <DependentUpon>Selection.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Test.xaml.cs">
       <DependentUpon>Test.xaml</DependentUpon>
     </Compile>
@@ -273,6 +282,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\SignIn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SubTest\ExamInterface.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SubTest\FinalCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SubTest\Selection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

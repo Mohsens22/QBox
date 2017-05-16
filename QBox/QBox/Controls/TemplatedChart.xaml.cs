@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -17,7 +18,7 @@ using Windows.UI.Xaml.Navigation;
 
 namespace QBox.Controls
 {
-    public sealed partial class TemplatedChart : UserControl
+    public sealed partial class TemplatedChart : UserControl,INotifyPropertyChanged
     {
         public TemplatedChart()
         {
@@ -25,7 +26,30 @@ namespace QBox.Controls
             
 
         }
-        public Double Percentage { get; set; }
+       
+        private Double _percentage;
+        public Double Percentage
+        {
+            get
+            {
+
+                return _percentage;
+
+            }
+            set
+            {
+                if (_percentage != value)
+                {
+                    _percentage = value;
+                    if (PropertyChanged != null)
+                    {
+                        PropertyChanged(this,
+                            new PropertyChangedEventArgs("Percentage"));
+                    }
+                }
+
+            }
+        }
         public SolidColorBrush SegmentColor
         {
             get { return (SolidColorBrush)GetValue(SegmentColorProperty); }
@@ -62,8 +86,20 @@ namespace QBox.Controls
 
         // Using a DependencyProperty as the backing store for DoneTasks.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty DoneTasksProperty =
-            DependencyProperty.Register("DoneTasks", typeof(int), typeof(TemplatedChart), new PropertyMetadata(null));
+            DependencyProperty.Register("DoneTasks", typeof(int), typeof(TemplatedChart), new PropertyMetadata(null, IntendedValuePropertyChangedCallback));
 
+        private static void IntendedValuePropertyChangedCallback(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var Fuck = d as TemplatedChart;
+            if (Fuck == null) return;
+            int percentsuspend;
+            if (Fuck.PendingTasks != 0)
+                percentsuspend = (int)Math.Round((double)(100 * Fuck.DoneTasks) / Fuck.PendingTasks);
+            else
+                percentsuspend = 0;
+
+            Fuck.Percentage = percentsuspend;
+        }
 
         public int PostponedTasks
         {
@@ -92,7 +128,7 @@ namespace QBox.Controls
 
         // Using a DependencyProperty as the backing store for PendingTasks.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty PendingTasksProperty =
-            DependencyProperty.Register("PendingTasks", typeof(int), typeof(TemplatedChart), new PropertyMetadata(null));
+            DependencyProperty.Register("PendingTasks", typeof(int), typeof(TemplatedChart), new PropertyMetadata(null, IntendedValuePropertyChangedCallback));
 
 
 
@@ -126,12 +162,6 @@ namespace QBox.Controls
         public static readonly DependencyProperty DarsProperty =
             DependencyProperty.Register("Dars", typeof(string), typeof(TemplatedChart), new PropertyMetadata(null));
 
-
-
-
-
-
-
-
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }
