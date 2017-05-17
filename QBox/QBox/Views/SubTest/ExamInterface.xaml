@@ -10,7 +10,8 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="269*"/>
+            <RowDefinition Height="35"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Background="Transparent"   >
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Stretch" FontSize="40" x:Name="txt"/>
@@ -20,7 +21,7 @@
 
         <ListView Grid.Row="1" ItemsSource="{x:Bind Questions}" ScrollViewer.IsHorizontalRailEnabled="False"
                   ScrollViewer.IsVerticalRailEnabled="False"
-         SelectionMode="None" IsMultiSelectCheckBoxEnabled="False"  Name="ListOfTests" Grid.RowSpan="2" >
+         SelectionMode="None" IsMultiSelectCheckBoxEnabled="False"  Name="ListOfTests" >
 
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
@@ -63,6 +64,7 @@
         </ListView>
 
 
+        <Button Click="Button_Click" Grid.Row="2" VerticalAlignment="Stretch" Content="End Now" Foreground="Red" Background="Transparent" FontWeight="SemiBold" HorizontalAlignment="Stretch" />
 
 
     </Grid>

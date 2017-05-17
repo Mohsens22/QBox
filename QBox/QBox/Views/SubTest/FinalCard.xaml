@@ -5,9 +5,32 @@
     xmlns:local="using:QBox.Views.SubTest"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:QBox.Controls"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <ScrollViewer>
+        <StackPanel Background="Transparent">
 
-    </Grid>
+
+
+            <controls:TemplatedChart Margin="20,10" SegmentColor="{StaticResource YellowBrush}" 
+
+                            PendingTasks="{x:Bind All}" DoneTasks="{x:Bind Done}" TheTime="{x:Bind Estimated}" Dars="{x:Bind Dars}"                 PostponedTasks="30" GlyphBrush="Gray"     HorizontalAlignment="Center"           />
+
+            <StackPanel Margin="30,10,0,0">
+                <TextBlock FontSize="18"  Text="Where to go next?" />
+                <StackPanel Margin="0,15,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
+
+                    <Button HorizontalAlignment="Stretch" Content="Go Home" Click="Button_Click" Height="35" Style="{StaticResource goitstyle}"/>
+                    <Button HorizontalAlignment="Stretch" Content="See more" Click="Button_Click_1" Margin="5,0,0,0" Height="35" Style="{StaticResource goitstyle}"/>
+
+
+                </StackPanel>
+
+            </StackPanel>
+
+
+
+        </StackPanel>
+    </ScrollViewer>
 </Page>

@@ -25,6 +25,31 @@ namespace QBox.Views.SubTest
         public FinalCard()
         {
             this.InitializeComponent();
+            
+        }
+        public int All { get; set; }
+        public int Done { get; set; }
+        public string Estimated { get; set; }
+        public string Dars { get; set; }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            var args =(Classes.NavigationStat) e.Parameter ;
+            All = args.All;
+            Done = args.Done;
+            Estimated = args.Estimated.ToString() + "s";
+            Dars = args.Dars.Name;
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Main));
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Performance));
         }
     }
 }

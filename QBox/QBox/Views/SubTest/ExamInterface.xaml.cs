@@ -52,11 +52,14 @@ namespace QBox.Views.SubTest
             }
 
         }
+        Model.Course _dars;
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
           var x=  e.Parameter as Classes.CourseItems;
             var z = Model.SetNewQuestions.GetQuestion(x.Dars, x.Items);
+            All = x.Items;
+            _dars = x.Dars;
             foreach (var item in z)
             {
                 Questions.Add(item);
@@ -65,12 +68,27 @@ namespace QBox.Views.SubTest
             txt.Text = basetime.ToString();
             timer.Start();
         }
+        int All, done, Estimated;
         void endsession()
         {
-            Frame.Navigate(typeof(FinalCard));
+          
+
+            var a = ListOfTests.Items;
+            int _done = 5;
+            Classes.NavigationStat _stat= new Classes.NavigationStat { All = All, Done=_done, Estimated = basetime,Dars=_dars};
+
+
+            Frame.Navigate(typeof(FinalCard), _stat);
 
         }
+        void calculateDone()
+        {
 
 
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            endsession();
+        }
     }
 }
