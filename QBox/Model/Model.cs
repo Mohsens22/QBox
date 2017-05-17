@@ -14,9 +14,9 @@ namespace Model
         public DbSet<Course> Courses { get; set; }
         public DbSet<Question> Questions { get; set; }
 
-        public DbSet<Answer> Answers { get; set; }
+        public  DbSet<Answer> Answers { get; set; }
 
-        public DbSet<Stat> Stats { get; set; }
+        public  DbSet<Stat> Stats { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -35,10 +35,10 @@ namespace Model
     public class Question
     {
         public int ID { get; set; }
-        public Course Course { get; set; }
+        public virtual Course Course { get; set; }
 
         public string Soal { get; set; }
-        public List<Answer> Answer { get; set; }
+        public virtual List<Answer> Answer { get; set; }
         public int Correct { get; set; }
     }
     public class Answer
@@ -54,7 +54,7 @@ namespace Model
         public DateTime Created { get; set; }
         public int All { get; set; }
         public int Correct { get; set; }
-        public Course Course { get; set; }
+        public virtual Course Course { get; set; }
 
     }
 
