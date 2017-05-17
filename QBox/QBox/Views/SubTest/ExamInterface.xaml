@@ -8,11 +8,20 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="Transparent"   >
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Stretch" FontSize="40" x:Name="txt"/>
 
-        <ListView ItemsSource="{x:Bind Questions}" ScrollViewer.IsHorizontalRailEnabled="False"
+
+        </Grid>
+
+        <ListView Grid.Row="1" ItemsSource="{x:Bind Questions}" ScrollViewer.IsHorizontalRailEnabled="False"
                   ScrollViewer.IsVerticalRailEnabled="False"
-         SelectionMode="None" IsMultiSelectCheckBoxEnabled="False"  Name="ListOfTests" >
-           
+         SelectionMode="None" IsMultiSelectCheckBoxEnabled="False"  Name="ListOfTests" Grid.RowSpan="2" >
+
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
@@ -36,11 +45,11 @@
                             <ListView.ItemTemplate>
                                 <DataTemplate >
 
-                                    <RadioButton Margin="10,3"   Content="{Binding Javab}"   />
+                                    <RadioButton Margin="10,3" GroupName="{Binding Taaag}"  Content="{Binding Javab}"   />
 
 
 
-                                    
+
 
                                 </DataTemplate>
                             </ListView.ItemTemplate>
@@ -54,7 +63,7 @@
         </ListView>
 
 
-       
+
 
     </Grid>
 </Page>

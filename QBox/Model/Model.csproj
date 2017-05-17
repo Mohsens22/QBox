@@ -110,6 +110,10 @@
     <Compile Include="Migrations\20170511234235_Migration2.designer.cs">
       <DependentUpon>20170511234235_Migration2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20170517043009_Taaag.cs" />
+    <Compile Include="Migrations\20170517043009_Taaag.designer.cs">
+      <DependentUpon>20170517043009_Taaag.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ModelModelSnapshot.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

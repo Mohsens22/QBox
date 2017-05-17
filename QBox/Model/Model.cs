@@ -46,6 +46,8 @@ namespace Model
         public int ID { get; set; }
         public int AssignedFlag { get; set; }
         public string Javab { get; set; }
+        public string Taaag { get; set; }
+
 
     }
     public class Stat
