@@ -6,6 +6,9 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Foundation.Metadata;
+using Windows.UI;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -42,8 +45,47 @@ namespace QBox
                 catch { }
             }
             Framer.Navigate(typeof(Main));
-
+            Myer((SolidColorBrush)Application.Current.Resources["AppBackgroundColor"], new SolidColorBrush(Colors.White));
         }
+        
+        private async void Myer(SolidColorBrush Brush , SolidColorBrush Foreground)
+        {
+            SolidColorBrush a = Brush;
+            try
+            {
+                ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
+                titleBar.BackgroundColor = a.Color;
+
+                titleBar.ButtonBackgroundColor = a.Color;
+
+                titleBar.InactiveBackgroundColor = a.Color;
+                titleBar.ButtonInactiveBackgroundColor = a.Color;
+                titleBar.InactiveForegroundColor = Foreground.Color;
+                titleBar.ButtonInactiveForegroundColor = Foreground.Color;
+                titleBar.ForegroundColor = Foreground.Color;
+                titleBar.ButtonForegroundColor = Foreground.Color;
+
+
+                //fuck you asshilism
+
+            }
+            catch
+            {
+
+            }
+            if (ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
+            {
+                var statusBar = StatusBar.GetForCurrentView();
+                if (statusBar != null)
+                {
+                    statusBar.BackgroundOpacity = 1;
+                    statusBar.BackgroundColor = a.Color;
+                    statusBar.ForegroundColor = Foreground.Color;
+                }
+            }
+        }
+
+
 
 
         private void ListView_ItemClick(object sender, ItemClickEventArgs e)
