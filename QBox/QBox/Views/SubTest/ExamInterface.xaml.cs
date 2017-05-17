@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -25,9 +26,31 @@ namespace QBox.Views.SubTest
     {
         ObservableCollection<Model.Question> Questions = new ObservableCollection<Model.Question>();
         private Random _random = new Random();
+        private DispatcherTimer timer;
+        private int basetime;
         public ExamInterface()
         {
             this.InitializeComponent();
+            this.NavigationCacheMode = NavigationCacheMode.Required;
+            timer = new DispatcherTimer();
+            timer.Interval = new TimeSpan(0, 0, 1);
+            timer.Tick += timer_Tick;
+        }
+        void timer_Tick(object sender, object e)
+        {
+            basetime = basetime - 1;
+            txt.Text = basetime.ToString();
+            if (basetime <= 30)
+            {
+                txt.Foreground = new SolidColorBrush( Colors.Red);
+
+            }
+            if (basetime == 0)
+            {
+                timer.Stop();
+                endsession();
+            }
+
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -38,6 +61,16 @@ namespace QBox.Views.SubTest
             {
                 Questions.Add(item);
             }
+            basetime = x.Items*30;
+            txt.Text = basetime.ToString();
+            timer.Start();
         }
+        void endsession()
+        {
+            Frame.Navigate(typeof(FinalCard));
+
+        }
+
+
     }
 }
