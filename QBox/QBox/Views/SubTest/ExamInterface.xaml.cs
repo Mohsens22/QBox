@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -22,6 +23,7 @@ namespace QBox.Views.SubTest
     /// </summary>
     public sealed partial class ExamInterface : Page
     {
+        ObservableCollection<Model.Question> Questions = new ObservableCollection<Model.Question>();
         public ExamInterface()
         {
             this.InitializeComponent();
@@ -29,6 +31,8 @@ namespace QBox.Views.SubTest
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
+          var x=  e.Parameter as Classes.CourseItems;
+            var y = Model.SetNewQuestions.GetQuestion(x.Dars, x.Items);
         }
     }
 }

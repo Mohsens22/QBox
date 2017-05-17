@@ -43,6 +43,26 @@ namespace Model
 
             return x;
         }
+        public static List<Question> GetQuestion(Course corse, int Items)
+        {
+            List<Question> x = new List<Question>();
+            using (var db = new Model())
+            {
+                x = db.Questions.ToList();
+            }
+            var y = new List<Question>();
+            foreach (var item in x)
+            {
+                if(item.Course==corse)
+                {
+                    y.Add(item);
+                }
+            }
+            Random rnd = new Random();
+            y.OrderBy(r => rnd.Next()).Take(5);
+
+            return y;
+        }
         public static List<Course> GetCourse()
         {
 
