@@ -9,5 +9,52 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+        <ListView ItemsSource="{x:Bind Questions}" ScrollViewer.IsHorizontalRailEnabled="False"
+                  ScrollViewer.IsVerticalRailEnabled="False"
+         SelectionMode="None" IsMultiSelectCheckBoxEnabled="False"  Name="ListOfTests" >
+           
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    <Setter Property="VerticalAlignment" Value="Stretch"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemTemplate>
+                <DataTemplate >
+                    <StackPanel VerticalAlignment="Top" Margin="6">
+                        <TextBlock Margin="7" TextWrapping="Wrap" Text="{Binding Soal}" />
+                        <ListView ItemsSource="{Binding Answer}" ScrollViewer.IsHorizontalRailEnabled="False"
+                  ScrollViewer.IsVerticalRailEnabled="False"
+         SelectionMode="None" IsMultiSelectCheckBoxEnabled="False"  Name="ListOfAnswers" >
+
+                            <ListView.ItemContainerStyle>
+                                <Style TargetType="ListViewItem">
+                                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                                    <Setter Property="VerticalAlignment" Value="Stretch"/>
+                                </Style>
+                            </ListView.ItemContainerStyle>
+                            <ListView.ItemTemplate>
+                                <DataTemplate >
+
+                                    <RadioButton Margin="10,3"   Content="{Binding Javab}"   />
+
+
+
+                                    
+
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+
+
+                    </StackPanel>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+       
+
     </Grid>
 </Page>

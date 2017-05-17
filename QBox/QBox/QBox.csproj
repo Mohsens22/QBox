@@ -126,6 +126,7 @@
     <Compile Include="Converters\IsdoneToColorConverter.cs" />
     <Compile Include="Converters\IsdoneToGlyphConverter.cs" />
     <Compile Include="Converters\TextToHashtagConverter.cs" />
+    <Compile Include="Converters\VoteConverter.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
