@@ -38,30 +38,33 @@ namespace Model
             List<Question> x = new List<Question>();
             using (var db = new Model())
             {
-                x=db.Questions.ToList();
+                x = db.Questions.Include("Course").Include("Answer").ToList();
+
             }
 
             return x;
         }
         public static List<Question> GetQuestion(Course corse, int Items)
         {
+            Random rnd = new Random();
+
             List<Question> x = new List<Question>();
             using (var db = new Model())
             {
-                x = db.Questions.ToList();
+                x = db.Questions.Include("Course").Include("Answer").ToList();
+
             }
             var y = new List<Question>();
             foreach (var item in x)
             {
-                if(item.Course==corse)
+                if(item.Course.ID==corse.ID)
                 {
                     y.Add(item);
                 }
             }
-            Random rnd = new Random();
-            y.OrderBy(r => rnd.Next()).Take(5);
+            var z = y.GetRange(rnd.Next(1,y.Count - Items), Items);
 
-            return y;
+            return z;
         }
         public static List<Course> GetCourse()
         {
@@ -93,7 +96,7 @@ namespace Model
             List<Stat> x = new List<Stat>();
             using (var db = new Model())
             {
-                x = db.Stats.ToList();
+                x = db.Stats.Include("Course").ToList();
             }
 
             return x;
