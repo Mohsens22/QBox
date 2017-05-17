@@ -39,7 +39,8 @@ namespace QBox.Views.SubTest
             Done = args.Done;
             Estimated = args.Estimated.ToString() + "s";
             Dars = args.Dars.Name;
-
+            Model.Stat _stat = new Model.Stat {  All=All , Correct=Done , Course=args.Dars, Created=DateTime.UtcNow};
+            Model.SetNewQuestions.SetStats(_stat);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
