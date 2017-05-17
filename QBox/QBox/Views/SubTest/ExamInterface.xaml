@@ -36,7 +36,7 @@
                             <ListView.ItemTemplate>
                                 <DataTemplate >
 
-                                    <RadioButton Margin="10,3"   Content="{Binding Javab}"   />
+                                    <RadioButton Margin="10,3" GroupName="{Binding Taaag}"  Content="{Binding Javab}"   />
 
 
 

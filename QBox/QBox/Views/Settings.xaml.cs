@@ -212,14 +212,16 @@ namespace QBox.Views
                     Answer = new List<Model.Answer>
                     {
 
-                         new Model.Answer{AssignedFlag=1,Javab="1St answer for"+i },
-                         new Model.Answer{AssignedFlag=2,Javab="2Nd answer for"+i },
-                         new Model.Answer{AssignedFlag=3,Javab="3Rd answer for"+i },
-                         new Model.Answer{AssignedFlag=4,Javab="4Th answer for"+i },
+                         new Model.Answer{AssignedFlag=1,Javab="1St answer for"+i ,Taaag=i+"1" },
+                         new Model.Answer{AssignedFlag=2,Javab="2Nd answer for"+i, Taaag=i+"1" },
+                         new Model.Answer{AssignedFlag=3,Javab="3Rd answer for"+i ,Taaag=i+"1"},
+                         new Model.Answer{AssignedFlag=4,Javab="4Th answer for"+i ,Taaag=i+"1"},
+                         
+
                     },
                     Correct = _random.Next(1, 4),
                     Course = new Model.Course { Name = "Math", ID = 101 }
-
+                    
 
                 });
             }
@@ -231,10 +233,10 @@ namespace QBox.Views
                     Answer = new List<Model.Answer>
                     {
 
-                         new Model.Answer{AssignedFlag=1,Javab="1St answer for"+i },
-                         new Model.Answer{AssignedFlag=2,Javab="2Nd answer for"+i },
-                         new Model.Answer{AssignedFlag=3,Javab="3Rd answer for"+i },
-                         new Model.Answer{AssignedFlag=4,Javab="4Th answer for"+i },
+                         new Model.Answer{AssignedFlag=1,Javab="1St answer for"+i,Taaag=i+"2"},
+                         new Model.Answer{AssignedFlag=2,Javab="2Nd answer for"+i,Taaag=i+"2"  },
+                         new Model.Answer{AssignedFlag=3,Javab="3Rd answer for"+i ,Taaag=i+"2" },
+                         new Model.Answer{AssignedFlag=4,Javab="4Th answer for"+i ,Taaag=i+"2" },
                     },
                     Correct = _random.Next(1, 4),
                     Course = new Model.Course { Name = "Physins", ID = 102 }
@@ -250,10 +252,10 @@ namespace QBox.Views
                     Answer = new List<Model.Answer>
                     {
 
-                         new Model.Answer{AssignedFlag=1,Javab="1St answer for"+i },
-                         new Model.Answer{AssignedFlag=2,Javab="2Nd answer for"+i },
-                         new Model.Answer{AssignedFlag=3,Javab="3Rd answer for"+i },
-                         new Model.Answer{AssignedFlag=4,Javab="4Th answer for"+i },
+                         new Model.Answer{AssignedFlag=1,Javab="1St answer for"+i,Taaag=i+"3"  },
+                         new Model.Answer{AssignedFlag=2,Javab="2Nd answer for"+i,Taaag=i+"3"},
+                         new Model.Answer{AssignedFlag=3,Javab="3Rd answer for"+i ,Taaag=i+"3"},
+                         new Model.Answer{AssignedFlag=4,Javab="4Th answer for"+i ,Taaag=i+"3"},
                     },
                     Correct = _random.Next(1, 4),
                     Course = new Model.Course { Name = "Computer", ID = 103 }
