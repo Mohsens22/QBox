@@ -1,4 +1,4 @@
-# Project Title
+# QBox
 
 A quiz maker app for students. Written by C# in UWP, ready for all windows lovers :)
 
